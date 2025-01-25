@@ -2,7 +2,7 @@
 
 poetry export -f requirements.txt --output ./docs/requirements.txt --without-hashes --all-extras --with buildthedocs 
 
-poetry run sphinx-apidoc ./opencf/ -o ./docs/source/opencf/ -f -E
+poetry run sphinx-apidoc ./opencf/ -o ./docs/source/opencf/ --force -no-headings --module-first
 
 PYTHON_PATH="$(poetry env info --path)"
 source "$PYTHON_PATH/bin/activate"
